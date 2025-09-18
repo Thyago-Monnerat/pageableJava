@@ -32,10 +32,10 @@ async function fetchUsers(pageNum, size) {
         })
 }
 
-fetchUsers(0, quantityInput.value ? quantityInput.value : 10)
+fetchUsers(0, quantityInput.value > 0 ? quantityInput.value : 10)
 
 quantityButton.addEventListener("click", () => {
-    fetchUsers(0, quantityInput.value)
+    fetchUsers(0, quantityInput.value > 0 ? quantityInput.value : 10)
 })
 
 
