@@ -1,0 +1,14 @@
+services:
+  pagination-back:
+    build: ./back
+    container_name: pageable-back
+    ports:
+      - "8080:8080"
+
+  pagination-front:
+    build: ./front
+    container_name: pageable-front
+    ports:
+      - "80:80"
+    depends_on:
+      - pagination-back
